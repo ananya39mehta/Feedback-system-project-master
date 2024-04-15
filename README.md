@@ -33,7 +33,7 @@
     <h2>Setup</h2>
     <ol>
         <li><strong>Clone the Repository:</strong></li>
-        <pre><code>git clone https://github.com/yourusername/universal-feedback-system.git
+        <pre><code>[git clone https://github.com/yourusername/universal-feedback-system.git](https://github.com/ananya39mehta/Feedback-system-project-master.git)
 cd universal-feedback-system
 </code></pre>
         <li><strong>Install Dependencies:</strong></li>
