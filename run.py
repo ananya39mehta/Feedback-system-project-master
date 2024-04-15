@@ -1,4 +1,4 @@
-from index import app
+from pyproject import app
 
 if __name__ == "__main__":
     app.run()
