@@ -71,7 +71,6 @@
         }
     </style>
 </head>
-
 <body>
     <div class="container">
         <h1>Feedback Form</h1>
@@ -79,7 +78,7 @@
         <p>1: Highly Unsatisfied - 5: Highly Satisfied</p>
         <form method="POST" action="/">
             {% for question in questions %}
-            <label>{{ question[1] }}</label>
+            <label>{{ loop.index }}. {{ question }}</label>
             <div class="radio-container">
                 <div class="radio-label">
                     <input type="radio" name="answer_{{ loop.index }}" value="5" required> 5
