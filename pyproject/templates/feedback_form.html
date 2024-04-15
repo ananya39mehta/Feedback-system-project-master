@@ -76,9 +76,9 @@
         <h1>Feedback Form</h1>
         <p>Rate your satisfaction level:</p>
         <p>1: Highly Unsatisfied - 5: Highly Satisfied</p>
-        <form method="POST" action="/">
+         <form method="POST" action="/">
             {% for question in questions %}
-            <label>{{ loop.index }}. {{ question }}</label>
+            <label>{{ question }}</label>
             <div class="radio-container">
                 <div class="radio-label">
                     <input type="radio" name="answer_{{ loop.index }}" value="5" required> 5
