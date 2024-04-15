@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            text-align: center;
+            padding-top: 50px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #007BFF;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        form {
+            margin-top: 30px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .radio-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+        .radio-label {
+            flex: 0 0 auto;
+            margin-right: 20px;
+            text-align: center;
+        }
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            resize: vertical;
+        }
+        .button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #007BFF;
+            color: #fff;
+            font-size: 16px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            border: none; /* Remove default button border */
+            cursor: pointer; /* Add cursor pointer on hover */
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Feedback Form</h1>
+        <p>Rate your satisfaction level:</p>
+        <p>1: Highly Unsatisfied - 5: Highly Satisfied</p>
+        <form method="POST" action="/">
+            {% for question in questions %}
+            <label>{{ loop.index }}. {{ question }}</label>
+            <div class="radio-container">
+                <div class="radio-label">
+                    <input type="radio" name="answer_{{ loop.index }}" value="5" required> 5
+                </div>
+                <div class="radio-label">
+                    <input type="radio" name="answer_{{ loop.index }}" value="4"> 4
+                </div>
+                <div class="radio-label">
+                    <input type="radio" name="answer_{{ loop.index }}" value="3"> 3
+                </div>
+                <div class="radio-label">
+                    <input type="radio" name="answer_{{ loop.index }}" value="2"> 2
+                </div>
+                <div class="radio-label">
+                    <input type="radio" name="answer_{{ loop.index }}" value="1"> 1
+                </div>
+            </div>
+            <br>
+            {% endfor %}
+            <br>
+            <label>Additional Feedback (Optional)</label>
+            <textarea name="additional_feedback" rows="4" placeholder="Enter your comments..."></textarea>
+            <br>
+            <button type="submit" class="button">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
